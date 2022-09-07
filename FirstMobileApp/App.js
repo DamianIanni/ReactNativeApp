@@ -18,8 +18,9 @@ import {
   View,
 } from 'react-native';
 import { Login } from './src/auth/Login';
-import {ForgotPassword} from './src/auth/ForgotPassword';
-import {SingUp} from './src/auth/SingUp'
+import { ForgotPassword } from './src/auth/ForgotPassword';
+import { SingUp } from './src/auth/SingUp';
+import { HomeScreen } from './src/home/HomeScreen'
 import {
   Colors,
   DebugInstructions,
@@ -28,10 +29,12 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import { NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Stack = createNativeStackNavigator()
+const Tab = createBottomTabNavigator();
 
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -42,15 +45,25 @@ const App: () => Node = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator 
-      screenOptions={{
-        headerShown: false
-      }}
-      >
-        <Stack.Screen name='Login' component={Login}   />
-        <Stack.Screen name='ForgotPassword' component={ForgotPassword} />
-        <Stack.Screen name='SingUp' component={SingUp} />
-      </Stack.Navigator>
+      <Tab.Navigator
+        screenOptions={{
+          tabBarStyle: {
+            height: '5%',
+            paddingHorizontal: 5,
+            paddingTop: 0,
+            backgroundColor: 'gray',
+            position: 'absolute',
+            borderTopWidth: 0,
+          },
+          headerShown: false,
+          tabBarActiveTintColor: '#F4E201',
+          tabBarInactiveTintColor: 'white'
+        }} >
+        <Tab.Screen name='Login' component={Login} />
+        <Tab.Screen name='ForgotPassword' component={ForgotPassword} />
+        <Tab.Screen name='SingUp' component={SingUp} />
+        <Tab.Screen name='HomeScreen' component={HomeScreen} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 };

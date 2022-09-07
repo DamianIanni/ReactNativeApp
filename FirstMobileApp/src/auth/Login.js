@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { View, TouchableOpacity, Text, Image, TextInput, StatusBar } from "react-native";
 import users from "../../mocks/users";
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+// import { NavigationContainer } from '@react-navigation/native';
+// import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 export const Login = ({ navigation }) => {
     const styles = {
@@ -87,6 +87,7 @@ export const Login = ({ navigation }) => {
     const checkForLoginData = (value) => {
         if (value.length > 0) {
             alert("Login successfull!!")
+            navigation.navigate('HomeScreen')
         } else {
             alert("User/Password incorrect")
         }
