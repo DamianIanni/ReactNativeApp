@@ -1,7 +1,8 @@
 import React, {useState} from "react";
+import { TabBar } from "../components/TabBar";
 import { SafeAreaView, View, StatusBar, Text, TextInput, TouchableOpacity, Image } from "react-native";
 
-export const SingUp = () => {
+export const SingUp = ({ navigation }) => {
     const styles = {
         main_container: {
             display: 'flex',

@@ -87,7 +87,7 @@ export const Login = ({ navigation }) => {
     const checkForLoginData = (value) => {
         if (value.length > 0) {
             alert("Login successfull!!")
-            navigation.navigate('HomeScreen')
+            navigation.navigate('TabBar')
         } else {
             alert("User/Password incorrect")
         }
