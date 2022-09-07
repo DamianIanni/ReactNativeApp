@@ -97,7 +97,7 @@ export const SingUp = () => {
                 <View>
                     <View style={styles.input}>
                         <TextInput
-                            onChangeText={user => setUser(user)}
+                            // onChangeText={user => setUser(user)}
                             cursorColor='#F4E201'
                             autoCorrect={false}
                             autoCapitalize="none"
@@ -107,7 +107,7 @@ export const SingUp = () => {
                     </View>
                     <View style={styles.input}>
                         <TextInput
-                            onChangeText={user => setUser(user)}
+                            // onChangeText={user => setUser(user)}
                             cursorColor='#F4E201'
                             autoCorrect={false}
                             autoCapitalize="none"
@@ -117,7 +117,7 @@ export const SingUp = () => {
                     </View>
                     <View style={styles.input}>
                         <TextInput
-                            onChangeText={user => setUser(user)}
+                            // onChangeText={user => setUser(user)}
                             cursorColor='#F4E201'
                             autoCorrect={false}
                             autoCapitalize="none"
@@ -127,7 +127,7 @@ export const SingUp = () => {
                     </View>
                     <View style={styles.input}>
                         <TextInput
-                            onChangeText={user => setUser(user)}
+                            // onChangeText={user => setUser(user)}
                             cursorColor='#F4E201'
                             autoCorrect={false}
                             autoCapitalize="none"
@@ -137,7 +137,7 @@ export const SingUp = () => {
                     </View>
                     <View style={styles.input}>
                         <TextInput
-                            onChangeText={password => setPassword(password)}
+                            // onChangeText={password => setPassword(password)}
                             cursorColor='#F4E201'
                             autoCorrect={false}
                             autoCapitalize="none"
@@ -148,7 +148,7 @@ export const SingUp = () => {
                     </View>
                     <View style={styles.input}>
                         <TextInput
-                            onChangeText={password => setPassword(password)}
+                            // onChangeText={password => setPassword(password)}
                             cursorColor='#F4E201'
                             autoCorrect={false}
                             autoCapitalize="none"
