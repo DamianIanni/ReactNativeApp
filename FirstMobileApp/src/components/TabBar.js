@@ -3,6 +3,8 @@ import { Image } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { HomeScreen } from '../home/HomeScreen';
 import { Login } from '../auth/Login';
+import { MyProfile } from '../home/MyProfile';
+import { Meetings } from '../home/Meetings';
 const Tab = createBottomTabNavigator();
 
 export const TabBar = ({ navigation }) => {
@@ -10,13 +12,13 @@ export const TabBar = ({ navigation }) => {
         <Tab.Navigator
             screenOptions={{
                 tabBarStyle: {
-                    height: '5.2%',
+                    height: '6%',
                     paddingHorizontal: 5,
                     paddingTop: 0,
                     paddingBottom: 4,
                     backgroundColor: 'gray',
                     position: 'absolute',
-                    borderTopWidth: 0,
+                    borderTopWidth: 1,
                     borderTopColor: '#F4E201',
                 },
                 headerShown: false,
@@ -32,7 +34,7 @@ export const TabBar = ({ navigation }) => {
                     tabBarIcon: ({ size, focused, color }) => {
                         return (
                             <Image
-                                style={{ width: focused ? 30 : size, height: focused ? 30 : size, tintColor: focused ? '#F4E201' : 'white' }}
+                                style={{ width: focused ? 28 : size, height: focused ? 28 : size, tintColor: focused ? '#F4E201' : 'white' }}
                                 source={require("../assets/home.png")}
                             />
                         );
@@ -41,13 +43,13 @@ export const TabBar = ({ navigation }) => {
             />
             <Tab.Screen
                 name="Meetings"
-                component={Login}
+                component={Meetings}
                 options={{
                     title: 'Meetings',
                     tabBarIcon: ({ size, focused, color }) => {
                         return (
                             <Image
-                                style={{ width: focused ? 30 : size, height: focused ? 30 : size, tintColor: focused ? '#F4E201' : 'white' }}
+                                style={{ width: focused ? 28 : size, height: focused ? 28 : size, tintColor: focused ? '#F4E201' : 'white' }}
                                 source={require("../assets/beer.png")}
                             />
                         );
@@ -56,13 +58,13 @@ export const TabBar = ({ navigation }) => {
             />
             <Tab.Screen 
             name="My profile" 
-            component={Login} 
+            component={MyProfile} 
             options={{
                 title: 'My profile',
                 tabBarIcon: ({ size, focused, color }) => {
                     return (
                         <Image
-                            style={{ width: focused ? 30 : size, height: focused ? 30 : size, tintColor: focused ? '#F4E201' : 'white' }}
+                            style={{ width: focused ? 28 : size, height: focused ? 28 : size, tintColor: focused ? '#F4E201' : 'white' }}
                             source={require("../assets/profile_icon.png")}
                         />
                     );

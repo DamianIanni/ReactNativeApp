@@ -22,6 +22,8 @@ import { ForgotPassword } from './src/auth/ForgotPassword';
 import { SingUp } from './src/auth/SingUp';
 import { HomeScreen } from './src/home/HomeScreen';
 import { TabBar } from './src/components/TabBar';
+import { MyProfile } from './src/home/MyProfile';
+import { Meetings } from './src/home/Meetings';
 import {
   Colors,
   DebugInstructions,
@@ -71,6 +73,8 @@ const App: () => Node = () => {
         <Stack.Screen name="SingUp" component={SingUp} />
         <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
         <Stack.Screen name="TabBar" component={TabBar} />
+        <Stack.Screen name="MyProfile" component={MyProfile} />
+        <Stack.Screen name="Meetings" component={Meetings} />
       </Stack.Navigator>
     </NavigationContainer>
   );
