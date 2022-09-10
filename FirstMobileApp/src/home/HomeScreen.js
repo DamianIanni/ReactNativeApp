@@ -1,6 +1,6 @@
 import React from "react";
 import { View, StatusBar, Text, ScrollView } from "react-native";
-import { Weather } from "../components/Weather";
+import { ActualWeather, FutureWeather } from "../components/Weather";
 
 
 export const HomeScreen = () => {
@@ -9,11 +9,13 @@ export const HomeScreen = () => {
         main_container: {
             display: 'flex',
             alignItems: 'center',
+            alignContent: 'center',
             justifyContent: 'center',
             backgroundColor: 'gray',
             color: 'black',
             flex: 1,
-            paddingBottom: '10%'
+            paddingBottom: '10%',
+            paddingTop: 30
         },
         forgot_password: {
             color: '#F4E201',
@@ -24,10 +26,13 @@ export const HomeScreen = () => {
         },
         weather_component: {
             alignItems: 'flex-start', 
-            justifyContent:'center', 
-            backgroundColor: 'red', 
+            // justifyContent:'center', 
+            // backgroundColor: 'red', 
+            height: '45%',
             width: '95%', 
-            margin: '2%'
+            marginBottom: '2%',
+            marginTop: '5%',
+            paddingTop: -10,
         }
     }
 
@@ -40,7 +45,7 @@ export const HomeScreen = () => {
                         <Text style={[styles.forgot_password,{padding: '2%'}]}>
                             Actual weather
                         </Text>
-                        <Weather />
+                        <ActualWeather />
                     </View>
                     <View
                     style={styles.weather_component}
@@ -48,7 +53,7 @@ export const HomeScreen = () => {
                         <Text style={[styles.forgot_password,{padding: '2%'}]}>
                             Weather in 1 hour
                         </Text>
-                        <Weather />
+                        <FutureWeather />
                     </View>
         </View >
     )
