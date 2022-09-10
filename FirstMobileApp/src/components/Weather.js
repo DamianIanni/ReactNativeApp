@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { View, Text, Image } from "react-native";
-import { Colors } from "react-native/Libraries/NewAppScreen";
 
 export const ActualWeather = () => {
     // useEffect (() => {
@@ -11,7 +10,6 @@ export const ActualWeather = () => {
     const styles = {
         main_container: {
             display: 'flex',
-            // flex: 10,
             height: '63%',
             width: '96%',
             padding: '2%',
@@ -19,14 +17,10 @@ export const ActualWeather = () => {
             margin: '2%',
             borderRadius: 15,
             alignContent: 'center',
-            // alignItems: 'center',
-            // justiftyContent: 'center',
-            // justiftyItems: 'center'
         },
         container_2: {
             display: 'flex',
             flexDirection: 'row',
-            // backgroundColor: 'blue',
             alignItems: 'center',
             marginTop: -15,
             justifyContent: 'space-between'
@@ -73,7 +67,6 @@ export const FutureWeather = () => {
     const styles = {
         main_container: {
             display: 'flex',
-            // flex: 10,
             height: '63%',
             width: '96%',
             padding: '2%',
@@ -81,14 +74,10 @@ export const FutureWeather = () => {
             margin: '2%',
             borderRadius: 15,
             alignContent: 'center',
-            // alignItems: 'center',
-            // justiftyContent: 'center',
-            // justiftyItems: 'center'
         },
         container_2: {
             display: 'flex',
             flexDirection: 'row',
-            // backgroundColor: 'blue',
             alignItems: 'center',
             marginTop: -15,
             justifyContent: 'space-between'

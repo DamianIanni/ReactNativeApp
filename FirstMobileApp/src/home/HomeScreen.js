@@ -15,19 +15,16 @@ export const HomeScreen = () => {
             color: 'black',
             flex: 1,
             paddingBottom: '10%',
-            paddingTop: 30
+            paddingTop: 10
         },
         forgot_password: {
             color: '#F4E201',
-            // marginTop: '5%',
             marginBottom: '1%',
             fontSize: 50,
             justifyContent: 'flex-start'
         },
         weather_component: {
             alignItems: 'flex-start', 
-            // justifyContent:'center', 
-            // backgroundColor: 'red', 
             height: '45%',
             width: '95%', 
             marginBottom: '2%',
