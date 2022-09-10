@@ -20,7 +20,10 @@ import {
 import { Login } from './src/auth/Login';
 import { ForgotPassword } from './src/auth/ForgotPassword';
 import { SingUp } from './src/auth/SingUp';
-import { HomeScreen } from './src/home/HomeScreen'
+import { HomeScreen } from './src/home/HomeScreen';
+import { TabBar } from './src/components/TabBar';
+import { MyProfile } from './src/home/MyProfile';
+import { Meetings } from './src/home/Meetings';
 import {
   Colors,
   DebugInstructions,
@@ -44,8 +47,8 @@ const App: () => Node = () => {
 
 
   return (
-    <NavigationContainer>
-      <Tab.Navigator
+    <NavigationContainer >
+      {/* <Tab.Navigator
         screenOptions={{
           tabBarStyle: {
             height: '5%',
@@ -63,7 +66,16 @@ const App: () => Node = () => {
         <Tab.Screen name='ForgotPassword' component={ForgotPassword} />
         <Tab.Screen name='SingUp' component={SingUp} />
         <Tab.Screen name='HomeScreen' component={HomeScreen} />
-      </Tab.Navigator>
+      </Tab.Navigator> */}
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="SingUp" component={SingUp} />
+        <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+        <Stack.Screen name="TabBar" component={TabBar} />
+        <Stack.Screen name="MyProfile" component={MyProfile} />
+        <Stack.Screen name="Meetings" component={Meetings} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };

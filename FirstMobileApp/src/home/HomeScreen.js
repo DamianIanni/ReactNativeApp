@@ -1,10 +1,6 @@
 import React from "react";
-import { SingUp } from "../auth/SingUp";
-import { View, StatusBar, Text } from "react-native";
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
-const Tab = createBottomTabNavigator();
+import { View, StatusBar, Text, ScrollView } from "react-native";
+import { ActualWeather, FutureWeather } from "../components/Weather";
 
 
 export const HomeScreen = () => {
@@ -13,21 +9,49 @@ export const HomeScreen = () => {
         main_container: {
             display: 'flex',
             alignItems: 'center',
+            alignContent: 'center',
             justifyContent: 'center',
             backgroundColor: 'gray',
             color: 'black',
-            height: '100%'
+            flex: 1,
+            paddingBottom: '10%',
+            paddingTop: 10
+        },
+        forgot_password: {
+            color: '#F4E201',
+            marginBottom: '1%',
+            fontSize: 50,
+            justifyContent: 'flex-start'
+        },
+        weather_component: {
+            alignItems: 'flex-start', 
+            height: '45%',
+            width: '95%', 
+            marginBottom: '2%',
+            marginTop: '5%',
+            paddingTop: -10,
         }
     }
 
     return (
         <View style={styles.main_container} >
             <StatusBar barStyle="light-content" hidden={false} backgroundColor="gray" translucent={false} />
-            <View>
-                <Text>
-                    HomeScreen
-                </Text>
-            </View>
-        </View>
+                    <View 
+                    style={styles.weather_component}
+                    >
+                        <Text style={[styles.forgot_password,{padding: '2%'}]}>
+                            Actual weather
+                        </Text>
+                        <ActualWeather />
+                    </View>
+                    <View
+                    style={styles.weather_component}
+                    >
+                        <Text style={[styles.forgot_password,{padding: '2%'}]}>
+                            Weather in 1 hour
+                        </Text>
+                        <FutureWeather />
+                    </View>
+        </View >
     )
 }
