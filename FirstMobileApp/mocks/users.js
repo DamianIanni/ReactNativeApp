@@ -51,6 +51,27 @@ export default [
                 date: 'March 18, Monday',
                 hour: '7:30',
                 time: 'PM'
+            },
+            {
+                meetingFrom: 'Mauro',
+                locate: 'Burzaco',
+                date: 'December 5, Sunday',
+                hour: '9:30',
+                time: 'PM'
+            },
+            {
+                meetingFrom: 'Nicolino',
+                locate: 'Burzaco',
+                date: 'December 5, Sunday',
+                hour: '9:30',
+                time: 'PM'
+            },
+            {
+                meetingFrom: 'Thomas',
+                locate: 'Burzaco',
+                date: 'December 5, Sunday',
+                hour: '9:30',
+                time: 'PM'
             }
         ],
         meetingSend: [

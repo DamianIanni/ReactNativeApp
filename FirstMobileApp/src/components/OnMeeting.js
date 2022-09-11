@@ -1,18 +1,21 @@
 import React from "react";
 import { View, StatusBar, Text, Image, TouchableOpacity } from "react-native";
 
-export const OnMeeting = () => {
+export const OnMeeting = (props) => {
 
     const styles = {
         main_container: {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            backgroundColor: 'gray',
-            height: '65%',
+            backgroundColor: 'black',
+            height: 400,
+            // flex: 1,
             width: '95%',
-            elevation: 10,
-            borderRadius: 15
+            // elevation: 15,
+            borderRadius: 15,
+            marginBottom: '6%',
+            marginTop: '6%'
         },
         name_container: {
             width: '90%',
@@ -25,7 +28,7 @@ export const OnMeeting = () => {
             width: '90%',
             // backgroundColor: 'blue',
             alignItems: 'center',
-            justifyContent: 'space-between',
+            justifyContent: 'space-evenly',
             margin: '3%',
             flexDirection: 'row'
         },
@@ -67,6 +70,7 @@ export const OnMeeting = () => {
         <View style={styles.main_container} >
             <StatusBar barStyle="light-content" hidden={false} backgroundColor="gray" translucent={false} />
             <View style={styles.name_container}>
+                {console.log("PROPS", props)}
                 <View style={[styles.profile_image]}>
                     <Image
                         style={{ height: 100, width: 100, tintColor: '#F4E201' }}
@@ -74,16 +78,16 @@ export const OnMeeting = () => {
                     />
                 </View>
                 <Text style={{ fontSize: 25, fontWeight: "bold" }}>
-                    Lichi
+                    {props.data.item.meetingFrom}
                 </Text>
             </View>
             <View style={{ display: 'flex', alignItems: 'flex-start', width: '90%', flexDirection: 'row' }}>
                 <Image
-                    style={{ width: 25, height: 25, tintColor: '#F4E201', marginLeft: -3, marginRight: '1.5%' }}
+                    style={{ width: 25, height: 25, tintColor: '#F4E201', marginLeft: -10, marginRight: '1.5%' }}
                     source={require("../assets/beer_meeting.png")}
                 />
                 <Text style={{ fontSize: 17 }}>
-                    Birra at Antares
+                    Birra at {props.data.item.locate}
                 </Text>
             </View>
             <View style={styles.date_hour_container}>
@@ -93,7 +97,7 @@ export const OnMeeting = () => {
                         source={require("../assets/calendar.png")}
                     />
                     <Text style={{ fontSize: 17 }}>
-                        March 24, Monday
+                        {props.data.item.date}
                     </Text>
                 </View>
                 <View style={{ flexDirection: 'row', marginLeft: '30.5%' }}>
@@ -102,11 +106,15 @@ export const OnMeeting = () => {
                         source={require("../assets/hour.png")}
                     />
                     <Text style={{ fontSize: 17 }}>
-                        7:30 PM
+                        {props.data.item.hour} {props.data.item.time}
                     </Text>
                 </View>
             </View>
-            <View style={{ borderColor: '#F4E201', borderWidth: 2, width: '90%', borderRadius: 5, marginBottom: '3%', marginTop: '3%' }}></View>
+            <View style={{
+                borderColor: '#F4E201', borderWidth: 2, width: '95%',
+                borderRadius: 5,
+                marginBottom: '3%', marginTop: '3%'
+            }}></View>
             <View style={styles.text_inivited_container}>
                 <Text style={{ fontSize: 27, fontWeight: "bold", }}>
                     YOU ARE INIVITED
