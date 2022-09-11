@@ -45,6 +45,7 @@ export const TabBar = ({ navigation }) => {
                 name="Meetings"
                 component={Meetings}
                 options={{
+                    tabBarBadge: 2,
                     title: 'Meetings',
                     tabBarIcon: ({ size, focused, color }) => {
                         return (
