@@ -123,7 +123,7 @@ export const MyProfile = ({ navigation }) => {
 
     return (
         <View style={[styles.main_container, { backgroundColor: 'gray' }]} >
-            <StatusBar barStyle="light-content" hidden={false} backgroundColor={modalVisible ? 'rgba(0, 0, 0, 0.712)' : "gray"} translucent={false} />
+            <StatusBar barStyle="dark-content" hidden={false} backgroundColor={modalVisible ? 'rgba(0, 0, 0, 0.712)' : '#F4E201'} translucent={false} />
             <View style={[styles.profile_image]}>
                 <Image
                     style={{ height: 260, width: 260, tintColor: '#F4E201' }}

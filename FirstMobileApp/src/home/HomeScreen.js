@@ -35,7 +35,7 @@ export const HomeScreen = () => {
 
     return (
         <View style={styles.main_container} >
-            <StatusBar barStyle="light-content" hidden={false} backgroundColor="gray" translucent={false} />
+            <StatusBar barStyle="dark-content" hidden={false} backgroundColor='#F4E201' translucent={false} />
                     <View 
                     style={styles.weather_component}
                     >

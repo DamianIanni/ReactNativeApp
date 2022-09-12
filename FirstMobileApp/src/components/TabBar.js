@@ -45,7 +45,7 @@ export const TabBar = ({ navigation }) => {
                 name="TopTabBar"
                 component={TopTabBar}
                 options={{
-                    tabBarBadge: 2,
+                    tabBarBadge: 4,
                     title: 'Meetings',
                     tabBarIcon: ({ size, focused, color }) => {
                         return (

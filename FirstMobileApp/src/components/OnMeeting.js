@@ -63,7 +63,6 @@ export const OnMeeting = (props) => {
         <View style={styles.main_container} >
             <StatusBar barStyle="light-content" hidden={false} backgroundColor="gray" translucent={false} />
             <View style={styles.name_container}>
-                {console.log("PROPS", props)}
                 <View style={[styles.profile_image]}>
                     <Image
                         style={{ height: 100, width: 100, tintColor: '#F4E201' }}
@@ -115,12 +114,12 @@ export const OnMeeting = (props) => {
             </View>
             <View style={styles.buttons_container}>
                 <TouchableOpacity style={styles.button_confirm_decline}>
-                    <Text style={{ color: 'gray', fontSize: 17 }}>
+                    <Text style={{ color: 'gray', fontSize: 17, fontWeight: "bold" }}>
                         CONFIRM
                     </Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.button_confirm_decline}>
-                    <Text style={{ color: 'gray', fontSize: 17 }}>
+                    <Text style={{ color: 'gray', fontSize: 17, fontWeight: "bold" }}>
                         DECLINE
                     </Text>
                 </TouchableOpacity>

@@ -4,8 +4,9 @@ import users from "../../mocks/users";
 
 
 import { OnMeeting } from "../components/OnMeeting";
+import { HeaderForScreen } from "../components/HeaderForScreen";
 
-export const OnMeetingScreen = ({navigation}) => {
+export const OnMeetingScreen = ( props,{navigation}) => {
 
     const styles = {
         main_container: {
@@ -27,8 +28,8 @@ export const OnMeetingScreen = ({navigation}) => {
 
     return (
         <View style={styles.main_container} >
-            {console.log(1)}
-            <StatusBar barStyle="light-content" hidden={false} backgroundColor="gray" translucent={false} />
+            <StatusBar barStyle="dark-content" hidden={false} backgroundColor='#F4E201' translucent={false} />
+            <HeaderForScreen props={props}/>
             <View style={{
                 width: '100%',
                 paddingLeft: '4%',
