@@ -10,23 +10,19 @@ export const OnMeeting = (props) => {
             justifyContent: 'center',
             backgroundColor: 'black',
             height: 400,
-            // flex: 1,
             width: '95%',
-            // elevation: 15,
             borderRadius: 15,
             marginBottom: '6%',
             marginTop: '6%'
         },
         name_container: {
             width: '90%',
-            // backgroundColor: 'blue',
             alignItems: 'center',
             justifyContent: 'center',
             margin: '3%'
         },
         date_hour_container: {
             width: '90%',
-            // backgroundColor: 'blue',
             alignItems: 'center',
             justifyContent: 'space-evenly',
             margin: '3%',
@@ -38,7 +34,6 @@ export const OnMeeting = (props) => {
         buttons_container: {
             display: 'flex',
             flexDirection: 'row',
-            // backgroundColor: 'red',
             marginTop: '7%',
             marginBottom: -30,
             height: '15%',
@@ -61,8 +56,6 @@ export const OnMeeting = (props) => {
             borderRadius: 500,
             marginTop: -35,
             marginBottom: '2%',
-            // elevation: 15,
-            // backgroundColor: 'red'
         }
     }
 

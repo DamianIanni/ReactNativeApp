@@ -4,7 +4,7 @@ export default [
         password: "cocacola",
         meetingRecived: [
             {
-                meetingFrom: 'Lichi',
+                meetingFrom: 'Catri',
                 locate: 'Monte Grande',
                 date: 'March 18, Monday',
                 hour: '7:30',

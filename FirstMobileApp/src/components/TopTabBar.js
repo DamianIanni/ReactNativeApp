@@ -1,13 +1,14 @@
 import React from 'react';
 import { Image } from 'react-native'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { HomeScreen } from '../home/HomeScreen';
-import { MyProfile } from '../home/MyProfile';
-import { Meetings } from '../home/Meetings';
-import { TopTabBar } from './TopTabBar';
-const Tab = createBottomTabNavigator();
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { OnMeetingScreen } from '../meetings/OnMeetingScreen';
+import { MyMeetingScreen } from '../meetings/MyMeetingsScreen';
+import { CreateMeetingScreen } from '../meetings/CreateMeetingScreen';
 
-export const TabBar = ({ navigation }) => {
+
+const Tab = createMaterialTopTabNavigator();
+
+export const TopTabBar = () => {
     return (
         <Tab.Navigator
             screenOptions={{
@@ -27,8 +28,8 @@ export const TabBar = ({ navigation }) => {
             }}
         >
             <Tab.Screen
-                name="Home"
-                component={HomeScreen}
+                name="OnMeetingScreen"
+                component={OnMeetingScreen}
                 options={{
                     title: 'Home',
                     tabBarIcon: ({ size, focused, color }) => {
@@ -42,35 +43,33 @@ export const TabBar = ({ navigation }) => {
                 }}
             />
             <Tab.Screen
-                name="TopTabBar"
-                component={TopTabBar}
+                name="CreateMeetingScreen"
+                component={CreateMeetingScreen}
                 options={{
-                    tabBarBadge: 2,
-                    title: 'Meetings',
+                    title: 'Home',
                     tabBarIcon: ({ size, focused, color }) => {
                         return (
                             <Image
                                 style={{ width: focused ? 28 : size, height: focused ? 28 : size, tintColor: focused ? '#F4E201' : 'white' }}
-                                source={require("../assets/beer.png")}
+                                source={require("../assets/home.png")}
                             />
                         );
                     },
                 }}
             />
-            <Tab.Screen 
-            name="My profile" 
-            component={MyProfile} 
-            options={{
-                title: 'My profile',
-                tabBarIcon: ({ size, focused, color }) => {
-                    return (
-                        <Image
-                            style={{ width: focused ? 28 : size, height: focused ? 28 : size, tintColor: focused ? '#F4E201' : 'white' }}
-                            source={require("../assets/profile_icon.png")}
-                        />
-                    );
-                },
-            }}
+            <Tab.Screen name="MyMeetingScreen"
+                component={MyMeetingScreen}
+                options={{
+                    title: 'Home',
+                    tabBarIcon: ({ size, focused, color }) => {
+                        return (
+                            <Image
+                                style={{ width: focused ? 28 : size, height: focused ? 28 : size, tintColor: focused ? '#F4E201' : 'white' }}
+                                source={require("../assets/home.png")}
+                            />
+                        );
+                    },
+                }}
             />
         </Tab.Navigator>
     );
