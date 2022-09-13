@@ -43,11 +43,12 @@ export const OnMeeting = (props) => {
         },
         button_confirm_decline: {
             width: '40%',
-            height: '70%',
+            height: 35,
             backgroundColor: '#F4E201',
             justifyContent: 'center',
             borderRadius: 50,
             alignItems: 'center',
+            marginLeft: '3%'
         },
         profile_image: {
             display: 'flex',
@@ -70,7 +71,7 @@ export const OnMeeting = (props) => {
                     />
                 </View>
                 <Text style={{ fontSize: 25, fontWeight: "bold" }}>
-                    {props.data.item.meetingFrom}
+                    {props.data.item.name}
                 </Text>
             </View>
             <View style={{ display: 'flex', alignItems: 'flex-start', width: '90%', flexDirection: 'row' }}>
@@ -107,23 +108,37 @@ export const OnMeeting = (props) => {
                 borderRadius: 5,
                 marginBottom: '3%', marginTop: '3%'
             }}></View>
-            <View style={styles.text_inivited_container}>
-                <Text style={{ fontSize: 27, fontWeight: "bold", }}>
-                    YOU ARE INIVITED
-                </Text>
-            </View>
-            <View style={styles.buttons_container}>
-                <TouchableOpacity style={styles.button_confirm_decline}>
-                    <Text style={{ color: 'gray', fontSize: 17, fontWeight: "bold" }}>
-                        CONFIRM
+            {props.data.item.sent === true ?
+                <View style={[styles.text_inivited_container,{paddingTop:20}]}>
+                    <Text style={{ fontSize: 27, fontWeight: "bold", textAlign: 'center' }}>
+                        {props.data.item.meetingStatus}
                     </Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.button_confirm_decline}>
-                    <Text style={{ color: 'gray', fontSize: 17, fontWeight: "bold" }}>
-                        DECLINE
+                    <Text>
                     </Text>
-                </TouchableOpacity>
-            </View>
+                </View>
+                :
+                <View style={{display: 'flex', justifyContent: 'center', height: 150, marginTop: -50, paddingTop:'10%', alignItems: 'center'}}>
+                    <View style={styles.text_inivited_container}>
+                        <Text style={{ fontSize: 27, fontWeight: "bold", }}>
+                            You have a meeting invitation
+                        </Text>
+                    </View>
+                    <View style={styles.buttons_container}>
+                        <TouchableOpacity style={styles.button_confirm_decline}>
+                            <Text style={{ color: 'gray', fontSize: 17, fontWeight: "bold" }}>
+                                CONFIRM
+                            </Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.button_confirm_decline}>
+                            <Text style={{ color: 'gray', fontSize: 17, fontWeight: "bold" }}>
+                                DECLINE
+                            </Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+            }
+
+
         </View>
     )
 }

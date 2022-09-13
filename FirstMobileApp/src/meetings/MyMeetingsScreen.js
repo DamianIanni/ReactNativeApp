@@ -20,9 +20,9 @@ export const MyMeetingScreen = (props,{navigation}) => {
         }
     }
     /// recibir usuario al momento del Login para despues saber que DATA usar ///
-    const meetingRecived = users[6].meetingRecived
+    const meetingSend = users[6].meetingSend
 
-   
+   meetingSend
 
 
 
@@ -30,7 +30,6 @@ export const MyMeetingScreen = (props,{navigation}) => {
         <View style={styles.main_container} >
             <StatusBar barStyle="dark-content" hidden={false} backgroundColor='#F4E201' translucent={false} />
             <HeaderForScreen props={props}/>
-            {console.log(3)}
             <View style={{
                 width: '100%',
                 paddingLeft: '4%',
@@ -41,7 +40,7 @@ export const MyMeetingScreen = (props,{navigation}) => {
                 flex: 1,
             }}>
                 <FlatList
-                    data={meetingRecived}
+                    data={meetingSend}
                     renderItem={(item, index) => (<OnMeeting data={item} />)}
                     keyExtractor={(item) => item.meetingFrom}
                 />

@@ -1,23 +1,40 @@
+
+const datata = true
+
+const setMeetingStatus = (datata) => {
+    if (datata === true) {
+        return 'HOLA'
+    } else {
+        return 'CHAU'
+    }
+}
+
+setMeetingStatus(datata)
 export default [
     {
         user: "Lichi",
         password: "cocacola",
         meetingRecived: [
             {
-                meetingFrom: 'Catri',
+                sent: false, //// variable that have to change
+                name: 'Catri',
                 locate: 'Monte Grande',
                 date: 'March 18, Monday',
                 hour: '7:30',
-                time: 'PM'
+                time: 'PM',
+                
             }
         ],
         meetingSend: [
             {
-                meetingTo: 'Rodrigo',
+                sent: true,  //// variable that have to change
+                name: 'Rodrigo',
                 locate: 'Monte Grande',
                 date: 'March 18, Monday',
                 hour: '7:30',
-                time: 'PM'
+                time: 'PM',
+                meetingStatus: 'Hola', //// variable that have to change
+                meetingResponse: true //// variable that have to change
             }
         ]
     },
@@ -46,28 +63,32 @@ export default [
         password: "mogolico",
         meetingRecived: [
             {
-                meetingFrom: 'Lichi',
+                sent: false,
+                name: 'Lichi',
                 locate: 'Monte Grande',
                 date: 'March 18, Monday',
                 hour: '7:30',
                 time: 'PM'
             },
             {
-                meetingFrom: 'Mauro',
+                sent: false,
+                name: 'Mauro',
                 locate: 'Burzaco',
                 date: 'December 5, Sunday',
                 hour: '9:30',
                 time: 'PM'
             },
             {
-                meetingFrom: 'Nicolino',
+                sent: false,
+                name: 'Nicolino',
                 locate: 'Burzaco',
                 date: 'December 5, Sunday',
                 hour: '9:30',
                 time: 'PM'
             },
             {
-                meetingFrom: 'Thomas',
+                sent: false,
+                name: 'Thomas',
                 locate: 'Burzaco',
                 date: 'December 5, Sunday',
                 hour: '9:30',
@@ -76,11 +97,14 @@ export default [
         ],
         meetingSend: [
             {
-                meetingTo: 'Rodrigo',
+                sent: true, //// variable that have to change
+                name: 'Lichi',
                 locate: 'Monte Grande',
                 date: 'March 18, Monday',
-                hour: '7:30',
-                time: 'PM'
+                hour: '8:30',
+                time: 'PM',
+                meetingStatus: 'Your meeting invitation was accepted', //// variable that have to change
+                meetingResponse: true //// variable that have to change
             }
         ]
     }

@@ -33,7 +33,6 @@ export const HeaderForScreen = (prop) => {
             <View>
                 <Text style={{ color: 'gray', fontSize: 25, fontWeight: 'bold' }}>
                     {getLabel(prop)}
-                    {console.log(prop)}
                 </Text>
             </View>
         </View>
