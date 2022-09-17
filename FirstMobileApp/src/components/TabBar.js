@@ -2,9 +2,9 @@ import React from 'react';
 import { Image } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { HomeScreen } from '../home/HomeScreen';
-import { Login } from '../auth/Login';
 import { MyProfile } from '../home/MyProfile';
 import { Meetings } from '../home/Meetings';
+import { TopTabBar } from './TopTabBar';
 const Tab = createBottomTabNavigator();
 
 export const TabBar = ({ navigation }) => {
@@ -42,9 +42,10 @@ export const TabBar = ({ navigation }) => {
                 }}
             />
             <Tab.Screen
-                name="Meetings"
-                component={Meetings}
+                name="TopTabBar"
+                component={TopTabBar}
                 options={{
+                    tabBarBadge: 4,
                     title: 'Meetings',
                     tabBarIcon: ({ size, focused, color }) => {
                         return (

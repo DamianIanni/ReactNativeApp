@@ -1,7 +1,7 @@
 import React from "react";
 import { SafeAreaView, View, StatusBar, TextInput, Text, TouchableOpacity } from "react-native";
 
-export const ForgotPassword = () => {
+export const ForgotPassword = ({navigation}) => {
 
     const styles = {
         main_container: {
