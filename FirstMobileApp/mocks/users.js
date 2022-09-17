@@ -14,6 +14,28 @@ export default [
     {
         user: "Lichi",
         password: "cocacola",
+        friends: [
+            {
+                id: 0,
+                name: "Rodrigo",
+            },
+            {
+                id: 1,
+                name: "Catri",
+            },
+            {
+                id: 2,
+                name: "Nicolino",
+            },
+            {
+                id: 3,
+                name: "Fran",
+            },
+            {
+                id: 4,
+                name: "Gaby",
+            }
+        ],
         meetingRecived: [
             {
                 sent: false, //// variable that have to change
@@ -22,7 +44,7 @@ export default [
                 date: 'March 18, Monday',
                 hour: '7:30',
                 time: 'PM',
-                
+
             }
         ],
         meetingSend: [
@@ -61,6 +83,28 @@ export default [
     {
         user: "Rodri",
         password: "mogolico",
+        friends: [
+            {
+                id: 0,
+                name: "Damian",
+            },
+            {
+                id: 1,
+                name: "Catri",
+            },
+            {
+                id: 2,
+                name: "Nicolino",
+            },
+            {
+                id: 3,
+                name: "Fran",
+            },
+            {
+                id: 4,
+                name: "Gaby",
+            }
+        ],
         meetingRecived: [
             {
                 sent: false,
