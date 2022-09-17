@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { View, StatusBar, Text, FlatList, Button, TouchableOpacity, Image, Modal, TextInput } from "react-native";
-import users from "../../mocks/users";
+import users, { pushMeetingCreated } from "../../mocks/users";
 import DatePicker from 'react-native-date-picker';
 import moment from "moment";
 import 'moment/locale/es';
 
-import { OnMeeting } from "../components/OnMeeting";
 import { HeaderForScreen } from "../components/HeaderForScreen";
 const styles = {
    main_container: {
@@ -19,7 +18,6 @@ const styles = {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      // backgroundColor: 'red',
       flex: 1,
       width: '95%',
       paddingBottom: '14%'
@@ -28,16 +26,20 @@ const styles = {
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
-      // backgroundColor: 'blue',
       width: '95%',
       margin: '8%',
       height: '12%',
       padding: '4%',
    },
+   text_select_modal: {
+
+      height: '30%',
+      width: '62%',
+      alignItems: 'center',
+      justifyContent: 'center'
+   },
    text_select: {
       borderBottomWidth: 2,
-      // borderBottomRadius: 50,
-      // borderWidth: 2,
       borderColor: '#F4E201',
       height: '70%',
       width: '62%',
@@ -116,12 +118,45 @@ export const CreateMeetingScreen = (props, { navigation }) => {
    const [selectLocation, setSelectLocation] = useState("Place")
 
    const [modalVisible, setModalVisible] = useState(false);
+   const [modalVisiblePlace, setModalVisiblePlace] = useState(false);
 
    const [friendName, setFriendName] = useState("Pick a fiend of yours !!")
 
 
+
    /// recibir usuario al momento del Login para despues saber que DATA usar ///
    const friends = users[6].friends
+   const pushGeneratedJson = () => {
+      const json = generateJson()
+      console.log("JSON ----------------->>", JSON.stringify(json, null, 2))
+      pushMeetingCreated(json)
+   }
+
+   const setAMPM = () => {
+      if (selectTimeHour < 12) {
+         return 'AM'
+      } else if (selectTimeHour > 12) {
+         return 'PM'
+      }
+   }
+
+   const generateJson = () => {
+
+      const datePlusDate = `${selectDate} ${selectDate_1}`
+      const hourPlusMinute = `${selectTimeHour}:${selectTimeMinute}`
+      const ampm = setAMPM()
+
+      return {
+         sent: true,
+         name: friendName,
+         locate: selectLocation,
+         date: datePlusDate,
+         hour: hourPlusMinute,
+         time: ampm,
+         meetingStatus: null,
+         meetingResponse: true
+      }
+   }
 
    const timeSelected = (time) => {
       setTime(time)
@@ -142,7 +177,6 @@ export const CreateMeetingScreen = (props, { navigation }) => {
       moment.locale('en')
       setSelectDate(dateSpanish.format('dddd'))
       setSelectDate_1(dateSpanish.format("ll"))
-      // setOpen_1(false)
    }
 
    const friendSelected = (id) => {
@@ -169,18 +203,42 @@ export const CreateMeetingScreen = (props, { navigation }) => {
    }
 
    const PlaceInput = () => {
+      const [locationFor, setLocationFor] = useState('Where is the meeting?')
+      const place = (data) => {
+         setLocationFor(data)
+      }
+      const placeSelected = () => {
+         setSelectLocation(locationFor)
+         setModalVisiblePlace(false)
+      }
       return (
-         <View style={styles.text_select}>
-            <TextInput
-               autoCorrect={false}
-               placeholder={selectLocation}
-               maxLength={20}
-               selectionColor={'#F4E201'}
+         <View style={{ width: 250, alignItems: 'center', marginTop: -50, justifyContent: 'center' }}>
+            <View
+               style={[styles.text_select_modal, { width: '80%' }]}
             >
-            </TextInput>
+               <TextInput
+                  style={{ width: '80%', textAlign: 'center' }}
+                  autoCorrect={false}
+                  placeholder={'Where is the meeting?'}
+                  maxLength={20}
+                  selectionColor={'#F4E201'}
+                  onChangeText={place}
+               >
+               </TextInput>
+            </View>
+
+            <TouchableOpacity
+               onPress={() => placeSelected()}
+               style={styles.btn_login}
+            >
+               <View>
+                  <Text style={{ color: 'gray', fontSize: 24, fontWeight: 'bold' }}>OK</Text>
+               </View>
+            </TouchableOpacity>
          </View>
       )
    }
+
 
    return (
       <View style={styles.main_container} >
@@ -214,6 +272,8 @@ export const CreateMeetingScreen = (props, { navigation }) => {
                   <Text>{friendName}</Text>
                </View>
             </TouchableOpacity>
+
+
             <TouchableOpacity
                style={styles.select_container}
                onPress={() => setOpen_1(true)}
@@ -240,7 +300,6 @@ export const CreateMeetingScreen = (props, { navigation }) => {
                   onConfirm={(date) => {
                      dateSelected(date)
                      setOpen_1(false)
-                     // setDate_1(date)
                   }}
                   onCancel={() => {
                      setOpen_1(false)
@@ -260,7 +319,7 @@ export const CreateMeetingScreen = (props, { navigation }) => {
                      {console.log(time)}
                      {selectTimeHour}
                      {(selectTimeHour === 'Select' && selectTimeMinute === 'hour') ? " " :
-                        " : "
+                        ":"
                      }
                      {selectTimeMinute}
                   </Text>
@@ -276,7 +335,6 @@ export const CreateMeetingScreen = (props, { navigation }) => {
                   onConfirm={(time) => {
                      timeSelected(time)
                      setOpen(false)
-                     // setTime(time)
                   }}
                   onCancel={() => {
                      setOpen(false)
@@ -288,20 +346,16 @@ export const CreateMeetingScreen = (props, { navigation }) => {
 
             <TouchableOpacity
                style={styles.select_container}
+               onPress={() => setModalVisiblePlace(true)}
             >
                <Modal
                   animationType="fade"
                   transparent={true}
-                  visible={modalVisible}
+                  visible={modalVisiblePlace}
                >
                   <View style={styles_1.centeredView}>
                      <View style={[styles_1.button, styles_1.buttonClose]}>
                         <PlaceInput />
-                        {/* <FlatList
-                           data={friends}
-                           keyExtractor={item => item.id}
-                           renderItem={item => friendsItem(item)}
-                        /> */}
                      </View>
                   </View>
                </Modal>
@@ -309,15 +363,15 @@ export const CreateMeetingScreen = (props, { navigation }) => {
                   style={{ height: 90, width: 90, tintColor: '#F4E201' }}
                   source={require("../assets/map.png")}
                />
-
                <View style={styles.text_select}>
-                  <Text>Write the place</Text>
+                  <Text>{selectLocation}</Text>
                </View>
 
             </TouchableOpacity>
 
             <TouchableOpacity
                style={styles.btn_login}
+               onPress={() => pushGeneratedJson()}
             >
                <View>
                   <Text style={{ color: 'gray', fontSize: 24, fontWeight: 'bold' }}>SEND</Text>

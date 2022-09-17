@@ -1,15 +1,12 @@
+import React from "react"
 
-const datata = true
-
-const setMeetingStatus = (datata) => {
-    if (datata === true) {
-        return 'HOLA'
-    } else {
-        return 'CHAU'
-    }
+export const pushMeetingCreated = (data) => {
+    console.log("JSON RECIBIDO------------------->>", JSON.stringify(data, null, 2))
+    // console.log("JSON RECIBIDO------------------->>", JSON.stringify(mock[6].meetingRecived, null, 2))
+    // mock[6].meetingRecived
 }
 
-setMeetingStatus(datata)
+
 export default [
     {
         user: "Lichi",
@@ -55,7 +52,7 @@ export default [
                 date: 'March 18, Monday',
                 hour: '7:30',
                 time: 'PM',
-                meetingStatus: 'Hola', //// variable that have to change
+                meetingStatus: null, //// variable that have to change
                 meetingResponse: true //// variable that have to change
             }
         ]
@@ -103,6 +100,10 @@ export default [
             {
                 id: 4,
                 name: "Gaby",
+            },
+            {
+                id: 5,
+                name: "Lichi",
             }
         ],
         meetingRecived: [
