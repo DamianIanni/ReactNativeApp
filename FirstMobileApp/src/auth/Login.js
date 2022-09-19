@@ -11,13 +11,14 @@ export const Login = ({ navigation }) => {
             alignItems: 'center',
             backgroundColor: 'gray',
             color: 'black',
-            height: '100%'
+            // height: '100%'
+            flex: 1
         },
         btn_login: {
-            marginTop: '40%',
+            marginTop: '30%',
             display: 'flex',
             backgroundColor: '#F4E201',
-            width: '65%',
+            width: '64%',
             justifyContent: 'center',
             alignItems: 'center',
             color: 'black',
@@ -26,21 +27,22 @@ export const Login = ({ navigation }) => {
         },
         forgot_password: {
             color: '#F4E201',
-            marginTop: '10%',
-            marginBottom: '3%',
+            marginTop: '8%',
+            marginBottom: '2%',
             fontSize: 17
         },
         text: {
             display: 'flex',
             alignItems: 'center',
             color: 'gray',
-            fontSize: 25
+            fontSize: 25,
+            fontWeight: "bold",
         },
         img: {
             display: 'flex',
             marginTop: '10%',
             paddingTop: '30%',
-            marginBottom: '5%'
+            marginBottom: '6%'
         },
         icon_login: {
             display: 'flex',
@@ -54,13 +56,13 @@ export const Login = ({ navigation }) => {
             flexDirection: 'row',
             borderColor: '#F4E201',
             borderWidth: 2,
-            width: '60%',
+            width: '64%',
             justifyContent: 'center',
             alignItems: 'center',
             color: 'black',
             height: 50,
             borderRadius: 30,
-            marginBottom: '5%'
+            marginBottom: '4%'
         },
         sing_up_container: {
             display: 'flex',
@@ -86,7 +88,6 @@ export const Login = ({ navigation }) => {
     
     const checkForLoginData = (value) => {
         if (value.length > 0) {
-            alert("Login successfull!!")
             navigation.navigate('TabBar')
         } else {
             alert("User/Password incorrect")
@@ -95,12 +96,12 @@ export const Login = ({ navigation }) => {
 
     return (
         <View style={styles.main_container}>
-            <StatusBar barStyle="light-content" hidden={false} backgroundColor="gray" translucent={false} />
+            <StatusBar barStyle="dark-content" hidden={false} backgroundColor='#F4E201' translucent={false} />
             <Image
                 style={styles.img}
                 source={require("../assets/ic_launcher_round.png")}
             />
-            <Text style={{ marginBottom: '30%' }}>
+            <Text style={{ marginBottom: '30%', fontWeight: "bold", }}>
                 PicardiasTM official app
             </Text>
             <View style={styles.input}>
@@ -113,7 +114,7 @@ export const Login = ({ navigation }) => {
                     cursorColor='#F4E201'
                     autoCorrect={false}
                     autoCapitalize="none"
-                    style={{ marginLeft: '3%', width: '95%' }}
+                    style={{ marginLeft: '4%', width: '96%' }}
                     placeholder="User"
                 />
             </View>
@@ -128,7 +129,7 @@ export const Login = ({ navigation }) => {
                     autoCorrect={false}
                     autoCapitalize="none"
                     secureTextEntry
-                    style={{ marginLeft: '3%', width: '95%' }}
+                    style={{ marginLeft: '4%', width: '96%' }}
                     placeholder="Password"
                 />
             </View>

@@ -13,12 +13,12 @@ export const TabBar = ({ navigation }) => {
             screenOptions={{
                 tabBarStyle: {
                     height: '6%',
-                    paddingHorizontal: 5,
+                    paddingHorizontal: 6,
                     paddingTop: 0,
                     paddingBottom: 4,
                     backgroundColor: 'gray',
                     position: 'absolute',
-                    borderTopWidth: 1,
+                    borderTopWidth: 2,
                     borderTopColor: '#F4E201',
                 },
                 headerShown: false,
@@ -34,7 +34,7 @@ export const TabBar = ({ navigation }) => {
                     tabBarIcon: ({ size, focused, color }) => {
                         return (
                             <Image
-                                style={{ width: focused ? 28 : size, height: focused ? 28 : size, tintColor: focused ? '#F4E201' : 'white' }}
+                                style={{ width: focused ? 22 : 18, height: focused ? 22 : 18, tintColor: focused ? '#F4E201' : 'white' }}
                                 source={require("../assets/home.png")}
                             />
                         );
@@ -47,30 +47,31 @@ export const TabBar = ({ navigation }) => {
                 options={{
                     tabBarBadge: 4,
                     title: 'Meetings',
+                    tabBarBadgeStyle: { backgroundColor: '#F4E201', height: 16, fontSize:14, textAlignVertical: 'center',color: 'gray'},
                     tabBarIcon: ({ size, focused, color }) => {
                         return (
                             <Image
-                                style={{ width: focused ? 28 : size, height: focused ? 28 : size, tintColor: focused ? '#F4E201' : 'white' }}
+                                style={{ width: focused ? 22 : 18, height: focused ? 22 : 18, tintColor: focused ? '#F4E201' : 'white' }}
                                 source={require("../assets/beer.png")}
                             />
                         );
                     },
                 }}
             />
-            <Tab.Screen 
-            name="My profile" 
-            component={MyProfile} 
-            options={{
-                title: 'My profile',
-                tabBarIcon: ({ size, focused, color }) => {
-                    return (
-                        <Image
-                            style={{ width: focused ? 28 : size, height: focused ? 28 : size, tintColor: focused ? '#F4E201' : 'white' }}
-                            source={require("../assets/profile_icon.png")}
-                        />
-                    );
-                },
-            }}
+            <Tab.Screen
+                name="My profile"
+                component={MyProfile}
+                options={{
+                    title: 'My profile',
+                    tabBarIcon: ({ size, focused, color }) => {
+                        return (
+                            <Image
+                                style={{ width: focused ? 22 : 18, height: focused ? 22 : 18, tintColor: focused ? '#F4E201' : 'white' }}
+                                source={require("../assets/profile_icon.png")}
+                            />
+                        );
+                    },
+                }}
             />
         </Tab.Navigator>
     );

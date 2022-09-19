@@ -14,22 +14,24 @@ export const HomeScreen = () => {
             backgroundColor: 'gray',
             color: 'black',
             flex: 1,
-            paddingBottom: '10%',
-            paddingTop: 10
+            paddingBottom: '4%',
+            // marginTop: 
         },
         forgot_password: {
             color: '#F4E201',
-            marginBottom: '1%',
-            fontSize: 50,
-            justifyContent: 'flex-start'
+            marginBottom: -10,
+            fontSize: 38,
+            justifyContent: 'flex-start',
+            fontWeight: "bold",
         },
         weather_component: {
             alignItems: 'flex-start', 
-            height: '45%',
-            width: '95%', 
+            height: '44%',
+            width: '96%', 
             marginBottom: '2%',
-            marginTop: '5%',
+            // marginTop: '6%',
             paddingTop: -10,
+            // backgroundColor: 'red'
         }
     }
 
@@ -40,7 +42,7 @@ export const HomeScreen = () => {
                     style={styles.weather_component}
                     >
                         <Text style={[styles.forgot_password,{padding: '2%'}]}>
-                            Actual weather
+                            .Actual wheather
                         </Text>
                         <ActualWeather />
                     </View>
@@ -48,7 +50,7 @@ export const HomeScreen = () => {
                     style={styles.weather_component}
                     >
                         <Text style={[styles.forgot_password,{padding: '2%'}]}>
-                            Weather in 1 hour
+                           .Wheather in 1 hour
                         </Text>
                         <FutureWeather />
                     </View>

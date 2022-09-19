@@ -11,12 +11,13 @@ export const SingUp = ({ navigation }) => {
             backgroundColor: 'gray',
             color: 'black',
             height: '100%'
+            // flex: 1
         },
         btn_login: {
-            marginTop: '20%',
+            marginTop: '18%',
             display: 'flex',
             backgroundColor: '#F4E201',
-            width: '65%',
+            width: '64%',
             justifyContent: 'center',
             alignItems: 'center',
             color: 'black',
@@ -27,24 +28,27 @@ export const SingUp = ({ navigation }) => {
             color: '#F4E201',
             // marginTop: '5%',
             marginBottom: '10%',
-            fontSize: 50
+            fontSize: 50,
+            fontWeight: "bold",
         },
         text_2: {
             color: '#F4E201',
             // marginTop: '5%',
             marginBottom: '10%',
+            fontWeight: "bold",
         },
         text: {
             display: 'flex',
             alignItems: 'center',
             color: 'gray',
-            fontSize: 25
+            fontSize: 25,
+            fontWeight: "bold",
         },
         img: {
             display: 'flex',
             marginTop: '10%',
             paddingTop: '30%',
-            marginBottom: '5%'
+            marginBottom: '4%'
         },
         icon_login: {
             display: 'flex',
@@ -64,7 +68,7 @@ export const SingUp = ({ navigation }) => {
             color: 'black',
             height: 50,
             borderRadius: 30,
-            marginBottom: '5%'
+            marginBottom: '4%'
         },
         sing_up_container: {
             display: 'flex',
@@ -72,7 +76,7 @@ export const SingUp = ({ navigation }) => {
         },
         sing_up: {
             color: '#F4E201',
-            marginLeft: 3,
+            marginLeft: 4,
         }
     }
 
@@ -89,7 +93,7 @@ export const SingUp = ({ navigation }) => {
     return (
         <SafeAreaView>
             <View style={styles.main_container}>
-                <StatusBar barStyle="light-content" hidden={false} backgroundColor="gray" translucent={false} />
+            <StatusBar barStyle="dark-content" hidden={false} backgroundColor='#F4E201' translucent={false} />
                 <View>
                     <Text style={styles.forgot_password}>
                         Create new{"\n"}account
@@ -102,7 +106,7 @@ export const SingUp = ({ navigation }) => {
                             cursorColor='#F4E201'
                             autoCorrect={false}
                             autoCapitalize="none"
-                            style={{ marginLeft: '3%', width: '95%' }}
+                            style={{ marginLeft: '4%', width: '96%' }}
                             placeholder="Name"
                         />
                     </View>
@@ -112,7 +116,7 @@ export const SingUp = ({ navigation }) => {
                             cursorColor='#F4E201'
                             autoCorrect={false}
                             autoCapitalize="none"
-                            style={{ marginLeft: '3%', width: '95%' }}
+                            style={{ marginLeft: '4%', width: '96%' }}
                             placeholder="Last name"
                         />
                     </View>
@@ -122,7 +126,7 @@ export const SingUp = ({ navigation }) => {
                             cursorColor='#F4E201'
                             autoCorrect={false}
                             autoCapitalize="none"
-                            style={{ marginLeft: '3%', width: '95%' }}
+                            style={{ marginLeft: '4%', width: '96%' }}
                             placeholder="User name"
                         />
                     </View>
@@ -132,7 +136,7 @@ export const SingUp = ({ navigation }) => {
                             cursorColor='#F4E201'
                             autoCorrect={false}
                             autoCapitalize="none"
-                            style={{ marginLeft: '3%', width: '95%' }}
+                            style={{ marginLeft: '4%', width: '96%' }}
                             placeholder="Email"
                         />
                     </View>
@@ -143,7 +147,7 @@ export const SingUp = ({ navigation }) => {
                             autoCorrect={false}
                             autoCapitalize="none"
                             secureTextEntry
-                            style={{ marginLeft: '3%', width: '95%' }}
+                            style={{ marginLeft: '4%', width: '96%' }}
                             placeholder="Password"
                         />
                     </View>
@@ -154,7 +158,7 @@ export const SingUp = ({ navigation }) => {
                             autoCorrect={false}
                             autoCapitalize="none"
                             secureTextEntry
-                            style={{ marginLeft: '3%', width: '95%' }}
+                            style={{ marginLeft: '4%', width: '96%' }}
                             placeholder="Repeat password"
                         />
                     </View>
@@ -172,7 +176,7 @@ export const SingUp = ({ navigation }) => {
                         source={require("../assets/square_fill.png")}
                     />}
                     </TouchableOpacity>
-                    <Text style={{ marginRight: '0.5%' }}>
+                    <Text style={{ marginRight: '1%' }}>
                         Accept
                     </Text>
                     <TouchableOpacity

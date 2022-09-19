@@ -10,7 +10,7 @@ export const ActualWeather = () => {
     const styles = {
         main_container: {
             display: 'flex',
-            height: '63%',
+            height: '70%',
             width: '96%',
             padding: '2%',
             backgroundColor: 'black',
@@ -35,7 +35,7 @@ export const ActualWeather = () => {
         },
         text_city: {
             fontSize: 35,
-            paddingLeft: '7%'
+            paddingLeft: '6.5%'
         }
     }
 
@@ -56,7 +56,7 @@ export const ActualWeather = () => {
                     </View>
                 </View>
                 <Text style={styles.text_city}>Lanus</Text>
-                <Text style={{fontSize: 20, paddingLeft: '7%'}}>Description based on temperature and weather</Text>
+                <Text style={{fontSize: 16, paddingLeft: '7%'}}>Description based on temperature and wheather</Text>
             </View>
         </View>
     )
@@ -67,7 +67,7 @@ export const FutureWeather = () => {
     const styles = {
         main_container: {
             display: 'flex',
-            height: '63%',
+            height: '70%',
             width: '96%',
             padding: '2%',
             backgroundColor: 'black',
@@ -92,7 +92,7 @@ export const FutureWeather = () => {
         },
         text_city: {
             fontSize: 35,
-            paddingLeft: '7%'
+            paddingLeft: '6.5%'
         }
     }
 
@@ -113,7 +113,7 @@ export const FutureWeather = () => {
                 </View>
             </View>
             <Text style={styles.text_city}>Lanus</Text>
-            <Text style={{fontSize: 20, paddingLeft: '7%'}}>Description based on temperature and weather</Text>
+            <Text style={{fontSize: 16, paddingLeft: '7%'}}>Description based on temperature and wheather</Text>
         </View>
     </View>
     )

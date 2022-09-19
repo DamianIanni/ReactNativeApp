@@ -1,7 +1,7 @@
 import React from "react";
 import { SafeAreaView, View, StatusBar, TextInput, Text, TouchableOpacity } from "react-native";
 
-export const ForgotPassword = ({navigation}) => {
+export const ForgotPassword = ({ navigation }) => {
 
     const styles = {
         main_container: {
@@ -11,13 +11,14 @@ export const ForgotPassword = ({navigation}) => {
             flexDirection: 'column',
             backgroundColor: 'gray',
             color: 'black',
+            // flex: 1,
             height: '100%'
         },
         btn_login: {
-            marginTop: '20%',
+            marginTop: '26%',
             display: 'flex',
             backgroundColor: '#F4E201',
-            width: '60%',
+            width: '64%',
             justifyContent: 'center',
             alignItems: 'center',
             color: 'black',
@@ -26,19 +27,21 @@ export const ForgotPassword = ({navigation}) => {
         },
         forgot_password: {
             color: '#F4E201',
-            marginTop: '40%',
+            marginTop: '60%',
             marginBottom: '3%',
             fontSize: 17,
-            width: '65%',
+            width: '64%',
             alignContent: 'center',
             justifyContent: 'center',
-            textAlign: 'center'
+            textAlign: 'center',
+            fontWeight: "bold",
         },
         text: {
             display: 'flex',
             alignItems: 'center',
             color: 'gray',
-            fontSize: 25
+            fontSize: 25,
+            fontWeight: "bold",
         },
         img: {
             display: 'flex',
@@ -78,10 +81,10 @@ export const ForgotPassword = ({navigation}) => {
     return (
         <SafeAreaView>
             <View style={styles.main_container}>
-                <StatusBar barStyle="light-content" hidden={false} backgroundColor="gray" translucent={false} />
-                    <Text style={styles.forgot_password}>
-                        Type your Email to recive the link for recover your password
-                    </Text>
+                <StatusBar barStyle="dark-content" hidden={false} backgroundColor='#F4E201' translucent={false} />
+                <Text style={styles.forgot_password}>
+                    Type your Email to recive the link for recover your password
+                </Text>
                 <View style={styles.input}>
                     <TextInput
                         cursorColor='#F4E201'
@@ -92,11 +95,11 @@ export const ForgotPassword = ({navigation}) => {
                     />
                 </View>
                 <TouchableOpacity
-                style={styles.btn_login}
+                    style={styles.btn_login}
                 // onPress={() => navigation.navigate('SingUp')}
                 >
                     <Text style={styles.text}>
-                       Recover
+                        Recover
                     </Text>
                 </TouchableOpacity>
             </View>

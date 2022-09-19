@@ -20,13 +20,7 @@ export const TopTabBar = () => {
             screenOptions={{
                 tabBarStyle: {
                     height: '0%',
-                    // paddingHorizontal: 5,
-                    // paddingTop: 0,
-                    // paddingBottom: 4,
                     backgroundColor: 'gray',
-                    // position: 'absolute',
-                    // borderTopWidth: 1,
-                    // borderTopColor: '#F4E201',
                 },
             }}
             headerShown= {false}
