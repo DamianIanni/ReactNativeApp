@@ -32,7 +32,6 @@ export const OnMeetingScreen = ( props,{navigation}) => {
             <HeaderForScreen props={props}/>
             <View style={{
                 width: '100%',
-                paddingLeft: '4%',
                 alignItems: 'center',
                 alignContent: 'center',
                 justifyContent: 'center',

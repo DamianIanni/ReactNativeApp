@@ -10,11 +10,8 @@ export const HeaderForScreen = (prop) => {
             width: '100%',
             alignItems: 'center',
             justifyContent: 'center',
-            // marginLeft: 50,
             backgroundColor: '#F4E201',
             elevation: 10,
-            // borderBottomLeftRadius: 20,
-            // borderBottomRightRadius: 20,
         },
     }
 

@@ -22,24 +22,22 @@ export const MyProfile = ({ navigation }) => {
             alignItems: 'center',
             flexDirection: 'row',
             borderRadius: 500,
-            marginTop: '12%',
-            marginBottom: '15%',
-            // elevation: 15,
-            // backgroundColor: 'red'
+            marginTop: '6%',
+            marginBottom: '10%',
         },
         forgot_password: {
             color: '#F4E201',
-            fontSize: 40,
+            fontSize: 30,
             justifyContent: 'center'
         },
         camera_container: {
-            height: 55,
-            width: 55,
+            height: 56,
+            width: 56,
             borderRadius: 60,
             backgroundColor: '#a9a9a9ce',
             alignItems: 'center',
             justifyContent: 'center',
-            marginLeft: -55,
+            marginLeft: -54,
             marginTop: '40%'
         },
         userEmail_container: {
@@ -47,26 +45,27 @@ export const MyProfile = ({ navigation }) => {
             alignItems: 'center',
             flexDirection: 'row',
             width: '82%',
-            height: '5%',
+            height: '6%',
             justifyContent: 'flex-start',
-            marginTop: '20%',
+            marginTop: '16%',
         },
         btn_login: {
-            marginTop: '20%',
+            marginTop: '16%',
             display: 'flex',
             backgroundColor: '#F4E201',
-            width: '65%',
+            width: '64%',
             justifyContent: 'center',
             alignItems: 'center',
             color: 'black',
             height: 60,
-            borderRadius: 100
+            borderRadius: 100,
         },
         text: {
             display: 'flex',
             alignItems: 'center',
             color: 'gray',
-            fontSize: 25
+            fontSize: 25,
+            fontWeight: 'bold'
         }
     }
 
@@ -136,7 +135,7 @@ export const MyProfile = ({ navigation }) => {
                     />
                 </TouchableOpacity>
             </View>
-            <Text style={[styles.forgot_password, { borderColor: '#F4E201', borderBottomWidth: 2, borderTopWidth: 2 }]}>
+            <Text style={[styles.forgot_password, { borderColor: '#F4E201', borderBottomWidth: 2, borderTopWidth: 2, fontWeight: 'bold' }]}>
                 RODRIGO VALENZUELA
             </Text>
             <View style={styles.userEmail_container}>

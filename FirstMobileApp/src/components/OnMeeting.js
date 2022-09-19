@@ -10,7 +10,9 @@ export const OnMeeting = (props) => {
             justifyContent: 'center',
             backgroundColor: 'black',
             height: 400,
-            width: '95%',
+            // flex:1,
+            // width: '92.5%',
+            width: 340,
             borderRadius: 15,
             marginBottom: '6%',
             marginTop: '6%'
@@ -19,17 +21,20 @@ export const OnMeeting = (props) => {
             width: '90%',
             alignItems: 'center',
             justifyContent: 'center',
-            margin: '3%'
+            margin: '4%'
         },
         date_hour_container: {
-            width: '90%',
+            width: '94%',
             alignItems: 'center',
-            justifyContent: 'space-evenly',
-            margin: '3%',
+            justifyContent: 'space-between',
+            margin: '4%',
             flexDirection: 'row'
         },
         text_inivited_container: {
-            marginTop: '3%'
+            paddingLeft: '2%',
+            paddingRight: '2%',
+            marginTop: '2%', 
+            alignItems: 'center'
         },
         buttons_container: {
             display: 'flex',
@@ -48,7 +53,8 @@ export const OnMeeting = (props) => {
             justifyContent: 'center',
             borderRadius: 50,
             alignItems: 'center',
-            marginLeft: '3%'
+            marginLeft: '3%',
+            marginBottom: '4%'
         },
         profile_image: {
             display: 'flex',
@@ -66,7 +72,7 @@ export const OnMeeting = (props) => {
             <View style={styles.name_container}>
                 <View style={[styles.profile_image]}>
                     <Image
-                        style={{ height: 100, width: 100, tintColor: '#F4E201' }}
+                        style={{ height: 100, width: 100, tintColor: '#F4E201', marginTop: props.data.item.sent ? 20: 0}}
                         source={require("../assets/user_profile.png")}
                     />
                 </View>
@@ -74,9 +80,9 @@ export const OnMeeting = (props) => {
                     {props.data.item.name}
                 </Text>
             </View>
-            <View style={{ display: 'flex', alignItems: 'flex-start', width: '90%', flexDirection: 'row' }}>
+            <View style={{ display: 'flex', justifyContent: 'flex-start', width: '94%', flexDirection: 'row'}}>
                 <Image
-                    style={{ width: 25, height: 25, tintColor: '#F4E201', marginLeft: -10, marginRight: '1.5%' }}
+                    style={{ width: 25, height: 25, tintColor: '#F4E201', marginRight: '2%', marginLeft: -3 }}
                     source={require("../assets/beer_meeting.png")}
                 />
                 <Text style={{ fontSize: 17 }}>
@@ -84,7 +90,7 @@ export const OnMeeting = (props) => {
                 </Text>
             </View>
             <View style={styles.date_hour_container}>
-                <View style={{ flexDirection: 'row' }}>
+                <View style={{ flexDirection: 'row', justifyContent: 'flex-start' }}>
                     <Image
                         style={{ width: 20, height: 20, tintColor: '#F4E201', marginRight: '5%' }}
                         source={require("../assets/calendar.png")}
@@ -93,7 +99,7 @@ export const OnMeeting = (props) => {
                         {props.data.item.date}
                     </Text>
                 </View>
-                <View style={{ flexDirection: 'row', marginLeft: '30.5%' }}>
+                <View style={{ flexDirection: 'row', justifyContent: 'flex-end'}}>
                     <Image
                         style={{ width: 20, height: 20, tintColor: '#F4E201', marginRight: '5%' }}
                         source={require("../assets/hour.png")}
@@ -119,7 +125,7 @@ export const OnMeeting = (props) => {
                 :
                 <View style={{display: 'flex', justifyContent: 'center', height: 150, marginTop: -50, paddingTop:'10%', alignItems: 'center'}}>
                     <View style={styles.text_inivited_container}>
-                        <Text style={{ fontSize: 27, fontWeight: "bold", }}>
+                        <Text style={{ fontSize: 27, fontWeight: "bold", textAlign: 'center' }}>
                             You have a meeting invitation
                         </Text>
                     </View>
