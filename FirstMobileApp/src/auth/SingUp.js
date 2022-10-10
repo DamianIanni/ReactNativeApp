@@ -1,6 +1,7 @@
-import React, {useState} from "react";
-import { TabBar } from "../components/TabBar";
+import React, { useState } from "react";
 import { SafeAreaView, View, StatusBar, Text, TextInput, TouchableOpacity, Image } from "react-native";
+import * as services from '../../services/services'
+
 
 export const SingUp = ({ navigation }) => {
     const styles = {
@@ -81,19 +82,53 @@ export const SingUp = ({ navigation }) => {
     }
 
     const [box, setBox] = useState(false)
+    const [name, setName] = useState("")
+    const [lastName, setLastName] = useState("")
+    const [userName, setUserName] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [repeatPassword, setRepeatPassword] = useState("")
+    
 
     const changeBox = () => {
-       if (box === false) {
-        setBox(true)
-       } else {
-        setBox(false)
-       }
+        if (box === false) {
+            setBox(true)
+        } else {
+            setBox(false)
+        }
+    }
+
+    const validateData = () => {
+        if (!box || name == "" || lastName == "" || userName == "" || email == "" || password == "" || password != repeatPassword) {
+            alert('There is/are incompleted fields')
+        } else {
+            createUser()
+        }
+    }
+
+    const createJSONbody = () => {
+        return{
+            userName: userName,
+            name: name,
+            lastName: lastName,
+            email: email,
+            password: password,
+            friendList: [],
+            meetingRecived: [],
+            meetingSent: []
+        }
+    }
+
+    const createUser = async () => {
+        const userData = createJSONbody()
+        console.log(JSON.stringify(userData, null, 2))
+        await services.createAccount(userData)
     }
 
     return (
         <SafeAreaView>
             <View style={styles.main_container}>
-            <StatusBar barStyle="dark-content" hidden={false} backgroundColor='#F4E201' translucent={false} />
+                <StatusBar barStyle="dark-content" hidden={false} backgroundColor='#F4E201' translucent={false} />
                 <View>
                     <Text style={styles.forgot_password}>
                         Create new{"\n"}account
@@ -102,7 +137,7 @@ export const SingUp = ({ navigation }) => {
                 <View>
                     <View style={styles.input}>
                         <TextInput
-                            // onChangeText={user => setUser(user)}
+                            onChangeText={name => setName(name)}
                             cursorColor='#F4E201'
                             autoCorrect={false}
                             autoCapitalize="none"
@@ -112,7 +147,7 @@ export const SingUp = ({ navigation }) => {
                     </View>
                     <View style={styles.input}>
                         <TextInput
-                            // onChangeText={user => setUser(user)}
+                            onChangeText={lastName => setLastName(lastName)}
                             cursorColor='#F4E201'
                             autoCorrect={false}
                             autoCapitalize="none"
@@ -122,17 +157,17 @@ export const SingUp = ({ navigation }) => {
                     </View>
                     <View style={styles.input}>
                         <TextInput
-                            // onChangeText={user => setUser(user)}
+                            onChangeText={userName => setUserName(userName)}
                             cursorColor='#F4E201'
                             autoCorrect={false}
                             autoCapitalize="none"
                             style={{ marginLeft: '4%', width: '96%' }}
-                            placeholder="User name"
+                            placeholder="Username"
                         />
                     </View>
                     <View style={styles.input}>
                         <TextInput
-                            // onChangeText={user => setUser(user)}
+                            onChangeText={email => setEmail(email)}
                             cursorColor='#F4E201'
                             autoCorrect={false}
                             autoCapitalize="none"
@@ -142,7 +177,7 @@ export const SingUp = ({ navigation }) => {
                     </View>
                     <View style={styles.input}>
                         <TextInput
-                            // onChangeText={password => setPassword(password)}
+                            onChangeText={password => setPassword(password)}
                             cursorColor='#F4E201'
                             autoCorrect={false}
                             autoCapitalize="none"
@@ -153,7 +188,7 @@ export const SingUp = ({ navigation }) => {
                     </View>
                     <View style={styles.input}>
                         <TextInput
-                            // onChangeText={password => setPassword(password)}
+                            onChangeText={repeatPassword => setRepeatPassword(repeatPassword)}
                             cursorColor='#F4E201'
                             autoCorrect={false}
                             autoCapitalize="none"
@@ -166,15 +201,15 @@ export const SingUp = ({ navigation }) => {
 
                 <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
                     <TouchableOpacity
-                    onPress={changeBox}
+                        onPress={changeBox}
                     >
-                      { box === false ? <Image
+                        {box === false ? <Image
                             style={[styles.icon_login, { marginRight: '2%' }]}
                             source={require("../assets/square.png")}
                         /> : <Image
-                        style={[styles.icon_login, { marginRight: '2%' }]}
-                        source={require("../assets/square_fill.png")}
-                    />}
+                            style={[styles.icon_login, { marginRight: '2%' }]}
+                            source={require("../assets/square_fill.png")}
+                        />}
                     </TouchableOpacity>
                     <Text style={{ marginRight: '1%' }}>
                         Accept
@@ -187,7 +222,7 @@ export const SingUp = ({ navigation }) => {
                     </TouchableOpacity>
                 </View>
                 <TouchableOpacity
-                    // onPress={validateData}
+                    onPress={validateData}
                     style={styles.btn_login}>
                     <Text style={styles.text}>
                         Sing up
