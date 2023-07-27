@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { View, StatusBar, Text, FlatList, Button, TouchableOpacity, Image, Modal, TextInput } from "react-native";
-import users, { pushMeetingCreated } from "../../mocks/users";
+import users from "../../mocks/users";
 import DatePicker from 'react-native-date-picker';
 import moment from "moment";
 import 'moment/locale/es';
+import * as services from '../../services/services'
 
 import { HeaderForScreen } from "../components/HeaderForScreen";
 const styles = {
@@ -126,10 +127,10 @@ export const CreateMeetingScreen = (props, { navigation }) => {
 
    /// recibir usuario al momento del Login para despues saber que DATA usar ///
    const friends = users[6].friends
-   const pushGeneratedJson = () => {
+   const pushGeneratedJson = async () => {
       const json = generateJson()
       console.log("JSON ----------------->>", JSON.stringify(json, null, 2))
-      pushMeetingCreated(json)
+      await services.createInvitation(json)
    }
 
    const setAMPM = () => {
@@ -148,13 +149,12 @@ export const CreateMeetingScreen = (props, { navigation }) => {
 
       return {
          sent: true,
-         name: friendName,
+         toUserName: friendName,
          locate: selectLocation,
          date: datePlusDate,
          hour: hourPlusMinute,
          time: ampm,
          meetingStatus: null,
-         meetingResponse: true
       }
    }
 

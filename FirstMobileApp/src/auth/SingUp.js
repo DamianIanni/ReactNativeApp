@@ -123,6 +123,7 @@ export const SingUp = ({ navigation }) => {
         const userData = createJSONbody()
         console.log(JSON.stringify(userData, null, 2))
         await services.createAccount(userData)
+        // navigation.navigate('Login')
     }
 
     return (

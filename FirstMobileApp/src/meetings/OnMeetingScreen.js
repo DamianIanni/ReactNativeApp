@@ -42,6 +42,7 @@ export const OnMeetingScreen = ( props,{navigation}) => {
                     data={meetingRecived}
                     renderItem={(item, index) => (<OnMeeting data={item} />)}
                     keyExtractor={(item) => item.meetingFrom}
+                    key={(item, index) => item.index}
                 />
                 <View style={{ height: '6%' }}></View>
             </View>

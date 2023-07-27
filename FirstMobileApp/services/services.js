@@ -1,19 +1,21 @@
 import * as endpoints from './endpoints'
 
-const URL = 'http://192.168.0.37:3298'
+const URL = 'http://192.168.0.37:3298/api/createAccount'
 
 export const createAccount = async (dataFromCreateAccount) => {
     try {
-        const createAccountJSON = await fetch(URL + endpoints.createAccount, {
+        const createAccountJSON = await fetch(URL , {
             method: "POST",
             headers: {
-                "Content-Type": "application/json; charset=UTF-8",
+                "Content-Type": "application/json",
                 "User-Agent": "PostmanRuntime/7.29.2",
             },
             body: JSON.stringify(dataFromCreateAccount)
         });
-
+        const json = await createAccountJSON.json()
+        
     } catch (error) {
+        console.log("LOGUEATE CAPO")
         alert(`Error from createAccount:: ${error}`)
     }
 }
@@ -132,12 +134,13 @@ export const invitation = async (dataFromInvitation) => {
 
 export const createInvitation = async (dataFromCreateInvitation) => {
     try {
-        await fetch(URL + endpoints.createInvitation, {
+        const invitationFetch = await fetch(URL + endpoints.createInvitation, {
             method: "POST",
             body: JSON.stringify(dataFromCreateInvitation)
         })
 
-        // const accountCreated = await createAccountJSON.json()
+        const invitation = await invitationFetch.json()
+        console.log("INVITATION-----------------<<<><><>>>",invitation)
 
     } catch (error) {
         console.log(`Error from createInvitation:: ${error}`)
